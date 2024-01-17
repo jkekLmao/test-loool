@@ -5,8 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOOOOOL</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
-    <h1>BRO LOOOOL</h1>
+    <div id="navbar">
+            <div class="navbar-item"><a href="#section1">Bro</a></div>
+            <div class="navbar-item"><a href="#section2">Lmao</a></div>
+            <div class="navbar-item"><a href="#section3">Hahaha</a></div>
+    </div>
+    <div class="section" id="section1" style="height: 100vh; background-color: #ffffff;">
+        <h2>Bro looool</h2>
+    </div>
+    
+    <div class="section" id="section2" style="height: 100vh; background-color: #e0e0e0;">
+        <h2>Lmaooooo</h2>
+    </div>
+    
+    <div class="section" id="section3" style="height: 100vh; background-color: #ffffff;">
+        <h2>hahhahaha</h2>
+    </div>
+
+    <script>
+        // jQuery script for smooth scrolling
+        $(document).ready(function(){
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+        </script>
 </body>
 </html>
